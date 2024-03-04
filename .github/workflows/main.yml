@@ -9,12 +9,11 @@ on:
 jobs:
   run-on-linux:
     name: Run on Linux
-    runs-on: ${{ matrix.operating-system }}
+    runs-on: ubuntu-22.04
     if: github.event.workflow_run.conclusion == 'success'
     strategy:
       fail-fast: false
       matrix:
-        operating-system: [ ubuntu-22.04 ]
         php: [ '7.4' ]
         db: [ pgsql ]
         include:
