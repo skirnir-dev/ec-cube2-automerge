@@ -10,8 +10,7 @@ jobs:
   run-on-linux:
     name: Run on Linux
     runs-on: ${{ matrix.operating-system }}
-    if: |
-      github.event.workflow_run.conclusion == 'success'
+    if: github.event.workflow_run.conclusion == 'success'
     strategy:
       fail-fast: false
       matrix:
