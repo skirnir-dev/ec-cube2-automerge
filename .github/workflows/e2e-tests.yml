@@ -86,12 +86,6 @@ jobs:
         db: [ 'pgsql' ]
         php: [ '7.4' ]
         include:
-          - db: mysql
-            dbport: '3306'
-            dbuser: 'eccube_db_user'
-            dbpass: 'password'
-            dbname: 'eccube_db'
-            dbhost: 'mysql'
           - db: pgsql
             dbport: '5432'
             dbuser: 'eccube_db_user'
