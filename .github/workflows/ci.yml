@@ -1,0 +1,22 @@
+name: CI for EC-CUBE
+
+on:
+  push:
+    branches:
+      - '*'
+    tags:
+      - '*'
+    paths:
+      - '**'
+      - '!*.md'
+  pull_request:
+    paths:
+      - '**'
+      - '!*.md'
+jobs:
+  phpstan:
+    uses: ./.github/workflows/phpstan.yml
+  unit-tests:
+    uses: ./.github/workflows/unit-tests.yml
+  e2e-tests:
+    uses: ./.github/workflows/e2e-tests.yml

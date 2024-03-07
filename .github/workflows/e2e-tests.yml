@@ -2,16 +2,11 @@ name: E2E testing for EC-CUBE
 run-name: E2E testing for EC-CUBE
 
 on:
-  workflow_run:
-    workflows: [CI/CD for EC-CUBE]
-    types: [completed]
-
+  workflow_call:
 jobs:
   run-on-linux:
     name: Run on Linux
     runs-on: ubuntu-22.04
-    if: |
-      github.event.workflow_run.conclusion == 'success'
     strategy:
       fail-fast: false
       matrix:
