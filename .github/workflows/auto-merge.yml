@@ -25,11 +25,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Approve PR
-        run: gh pr review "$PR_URL" --approve
+      # - name: Approve PR
+      #   run: gh pr review "$PR_URL" --approve
       ## いきなりマージするのが怖いので、一旦自動承認（↑）だけにする
-      #- name: Enable auto-merge
-      #  run: gh pr merge --merge --auto "$PR_URL"
+      - name: Enable auto-merge
+        run: gh pr merge --merge --auto "$PR_URL"
 
   failed:
     runs-on: ubuntu-latest
