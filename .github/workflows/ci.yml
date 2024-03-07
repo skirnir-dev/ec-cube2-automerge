@@ -8,11 +8,9 @@ on:
       - '*'
     paths:
       - '**'
-      - '!*.md'
   pull_request:
     paths:
       - '**'
-      - '!*.md'
 jobs:
   phpstan:
     uses: ./.github/workflows/phpstan.yml
