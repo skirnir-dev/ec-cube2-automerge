@@ -1,0 +1,25 @@
+name: CI/CD for EC-CUBE
+run-name: CI/CD for EC-CUBE
+
+on:
+  workflow_call:
+
+jobs:
+  run-on-linux:
+    name: Run on Linux
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ '7.4' ]
+        db: [ pgsql ]
+        include:
+          - db: pgsql
+            dbport: '5432'
+            dbuser: 'postgres'
+            dbpass: 'password'
+            dbname: 'eccube_db'
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
